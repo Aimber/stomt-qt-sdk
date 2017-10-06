@@ -6,7 +6,7 @@ Window {
     visible: true
     width: 450
     height: 300
-    title: qsTr("Hello World")
+    title: qsTr("STOMT")
 
     Stomt{
         anchors.centerIn: parent

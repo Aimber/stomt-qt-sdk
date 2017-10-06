@@ -5,15 +5,9 @@ Item {
     height: 236
     width: 420
 
-    FontLoader { id: lato; source: "qrc:/assets/fonts/Lato-Regular.ttf" }
-
-
-    Connections {
-        target:stomtPlugin
-        onTargetImageUrlReceived: {
-            print("as");
-            print(url);
-        }
+    FontLoader {
+        id: lato
+        source: "qrc:/assets/fonts/Lato-Regular.ttf"
     }
 
     Rectangle {
@@ -39,6 +33,7 @@ Item {
             anchors.margins: 15
 
             Rectangle {
+                id: rectangle
                 anchors.right: parent.right
                 anchors.left: parent.left
                 height: stomtWrapper.height * 0.25
@@ -50,7 +45,7 @@ Item {
                     anchors.left: parent.left
                     width: parent.width * .5
                     WishLikeSwitcher {
-                        id:wishLikeSwitcher
+                        id: wishLikeSwitcher
                         anchors.left: parent.left
                     }
                 }
@@ -61,6 +56,7 @@ Item {
                     width: parent.width * .5
                     anchors.right: parent.right
                     anchors.top: parent.top
+                    anchors.topMargin: 5
                 }
             }
 
@@ -73,7 +69,7 @@ Item {
                 TextInput {
                     id: textInput
                     color: "#424246"
-                    text: qsTr("weilweiilweilwei eilweilwelwe ilweilweil")
+                    text: qsTr("")
                     font.letterSpacing: 0
                     font.wordSpacing: 0
                     font.family: lato.name
@@ -84,17 +80,31 @@ Item {
                     font.pixelSize: 14
                     wrapMode: TextInput.WrapAnywhere
                     maximumLength: 120
-
+                    onTextChanged: {
+                        if(textInput.length >= 100){
+                            limiter.opacity = 1
+                            limiter.text = textInput.length + " / 120"
+                        } else{
+                            limiter.opacity = 0
+                        }
+                    }
                 }
-
-
             }
 
             Item {
-                id: item2
+                id:footer
                 anchors.right: parent.right
                 anchors.left: parent.left
                 height: stomtWrapper.height * 0.2
+                Text {
+                    id: limiter
+                    opacity: 0
+                    text: qsTr("")
+                    anchors.right: parent.right
+                    anchors.rightMargin: 10
+                    anchors.verticalCenter: parent.verticalCenter
+                    color:"gray"
+                }
             }
         }
 
@@ -104,10 +114,11 @@ Item {
             anchors.bottomMargin: -40
             anchors.horizontalCenter: parent.horizontalCenter
         }
-        Connections{
-            target:submitBtn
-            onSendStomt:{
-                stomtPlugin.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
+        Connections {
+            target: submitBtn
+            onSendStomt: {
+                stomtPlugin.sendStomt(textInput.text,
+                                      wishLikeSwitcher.isPositive)
             }
         }
     }

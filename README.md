@@ -3,7 +3,7 @@
 This is an unofficial qt integration.
 
 <p align="center">
-  <img alt="STOMT Unreal Engine feedback integration" src="https://i.imgur.com/2xnai1Y.png" />
+  <img alt="STOMT Unreal Engine feedback integration" src="https://i.imgur.com/j14uP6G.png" />
 </p>
 
 ## Why?
