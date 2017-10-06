@@ -16,7 +16,7 @@ class Stomt : public QObject
 {
     Q_OBJECT
 public:
-    explicit Stomt(QByteArray stomtID, QObject *parent = nullptr);
+    explicit Stomt(QByteArray stomtID, QByteArray targetID, QObject *parent = nullptr);
     Q_PROPERTY(QUrl profileImageUrl READ profileImageUrl WRITE setProfileImageUrl NOTIFY profileImageUrlChanged)
 
     QUrl profileImageUrl() const
@@ -26,12 +26,11 @@ public:
 
 signals:
     void targetImageUrlReceived(QUrl url);
-
     void profileImageUrlChanged(QUrl profileImageUrl);
 
 public slots:
-    void getTargetInfo(QString targetName);
-    void sendStomt(QString targetName, QString text, bool isPositive);
+    void getTargetInfo();
+    void sendStomt(QString text, bool isPositive);
     void handleNetworkData(QNetworkReply* reply);
     void targetInfoReceived(QNetworkReply* reply);
 
@@ -48,7 +47,7 @@ private:
     QNetworkAccessManager* m_netManager;
     QNetworkReply* m_netReply;
     QNetworkRequest m_netRequest;
-    QByteArray m_stomtID;
+    QByteArray m_stomtID, m_targetID;
 
     QUrl m_profileImageUrl;
 };

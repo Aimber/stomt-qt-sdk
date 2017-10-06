@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    Stomt stomt("");
+    //Use your AppID and you TargetID here
+    Stomt stomt("","");
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("stomtPlugin", &stomt);
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

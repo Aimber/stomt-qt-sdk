@@ -40,6 +40,7 @@ Rectangle {
         Text {
             id: targetName
             text: qsTr("screenplay")
+            font.pixelSize: 16
             font.family: lato.name
             renderType: Text.NativeRendering
             anchors.verticalCenter: parent.verticalCenter

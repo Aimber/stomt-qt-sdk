@@ -34,7 +34,7 @@ Item {
 
         Column {
             id: column
-            spacing: 10
+            spacing: 15
             anchors.fill: parent
             anchors.margins: 15
 
@@ -80,9 +80,9 @@ Item {
                     autoScroll: false
                     renderType: Text.NativeRendering
                     anchors.fill: parent
+                    anchors.margins: 5
                     font.pixelSize: 14
                     wrapMode: TextInput.WrapAnywhere
-                    anchors.margins: 0
                     maximumLength: 120
 
                 }
@@ -94,37 +94,20 @@ Item {
                 id: item2
                 anchors.right: parent.right
                 anchors.left: parent.left
-                height: stomtWrapper.height * 0.25
+                height: stomtWrapper.height * 0.2
             }
         }
 
-        Rectangle {
-            id: rectangle
-            width: 80
-            height: 80
-            color: "#768998"
-            radius: 40
-            border.color: "#e1e8ed"
-            border.width: 6
+        SubmitBtn {
+            id: submitBtn
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -40
             anchors.horizontalCenter: parent.horizontalCenter
-
-            Text {
-                id: text1
-                color: "#ffffff"
-                text: qsTr(">")
-                font.family: lato.name
-                font.bold: false
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 34
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: stomtPlugin.sendStomt(targetName.text,textInput.text,wishLikeSwitcher.isPositive)
+        }
+        Connections{
+            target:submitBtn
+            onSendStomt:{
+                stomtPlugin.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
             }
         }
     }

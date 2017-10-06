@@ -4,8 +4,8 @@ import "qml/"
 
 Window {
     visible: true
-    width: 640
-    height: 480
+    width: 450
+    height: 300
     title: qsTr("Hello World")
 
     Stomt{

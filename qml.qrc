@@ -15,5 +15,7 @@
         <file>assets/fonts/Lato-LightItalic.ttf</file>
         <file>assets/fonts/Lato-Regular.ttf</file>
         <file>qml/Target.qml</file>
+        <file>assets/icons/icon_arrow-pointing-to-right.svg</file>
+        <file>qml/SubmitBtn.qml</file>
     </qresource>
 </RCC>
