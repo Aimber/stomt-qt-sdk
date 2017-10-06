@@ -27,6 +27,7 @@ public:
 signals:
     void targetImageUrlReceived(QUrl url);
     void profileImageUrlChanged(QUrl profileImageUrl);
+    void stomtSuccessfulSend();
 
 public slots:
     void getTargetInfo();

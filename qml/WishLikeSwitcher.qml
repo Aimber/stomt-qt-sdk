@@ -7,8 +7,10 @@ Item {
     height: 56
     property bool isPositive: false
 
-    FontLoader { id: lato; source: "qrc:/assets/fonts/Lato-Regular.ttf" }
-
+    FontLoader {
+        id: lato
+        source: "qrc:/assets/fonts/Lato-Regular.ttf"
+    }
 
     Rectangle {
         id: likeWrapper
@@ -43,15 +45,14 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
-            anchors.topMargin:3
+            anchors.topMargin: 3
             Text {
                 text: qsTr("?")
                 anchors.centerIn: parent
                 font.pixelSize: 18
-                color:"gray"
+                color: "gray"
             }
         }
-
     }
 
     Rectangle {
@@ -87,21 +88,20 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
-            anchors.topMargin:3
+            anchors.topMargin: 3
             Text {
                 text: qsTr("?")
                 anchors.centerIn: parent
                 font.pixelSize: 18
-                color:"gray"
+                color: "gray"
             }
         }
-
     }
 
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            if(wishLikeSwitcher.state == "like"){
+            if (wishLikeSwitcher.state == "like") {
                 wishLikeSwitcher.state = "wish"
                 isPositive = false
             } else {
@@ -110,9 +110,6 @@ Item {
             }
         }
     }
-
-
-
 
     states: [
         State {
@@ -137,8 +134,11 @@ Item {
     ]
     transitions: [
         Transition {
-            NumberAnimation { properties: "x,y"; easing.type: Easing.InOutQuad; duration: 300 }
-
+            NumberAnimation {
+                properties: "x,y"
+                easing.type: Easing.InOutQuad
+                duration: 300
+            }
         }
     ]
 }

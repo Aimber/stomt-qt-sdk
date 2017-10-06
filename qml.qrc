@@ -17,5 +17,6 @@
         <file>qml/Target.qml</file>
         <file>assets/icons/icon_arrow-pointing-to-right.svg</file>
         <file>qml/SubmitBtn.qml</file>
+        <file>assets/icons/icon_correct.svg</file>
     </qresource>
 </RCC>

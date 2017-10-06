@@ -50,4 +50,6 @@ void Stomt::sendStomt(QString text, bool isPositive)
 
 void Stomt::handleNetworkData(QNetworkReply* reply)
 {
+    if(reply->readAll() == "")
+        emit stomtSuccessfulSend();
 }
