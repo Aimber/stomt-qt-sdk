@@ -50,6 +50,7 @@ Rectangle {
     }
     MouseArea{
         anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
         onClicked: {
             Qt.openUrlExternally("https://www.stomt.com/" + targetName.text)
         }
