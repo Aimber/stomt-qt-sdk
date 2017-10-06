@@ -7,9 +7,6 @@ Item {
 
     FontLoader { id: lato; source: "qrc:/assets/fonts/Lato-Regular.ttf" }
 
-    Component.onCompleted: {
-        stomtPlugin.getTargetImageUrl(targetName.text)
-    }
 
     Connections {
         target:stomtPlugin
@@ -58,42 +55,12 @@ Item {
                     }
                 }
 
-                Rectangle {
+                Target {
                     id: targetWrapper
-                    anchors.top: parent.top
-                    anchors.right: parent.right
                     height: parent.height
                     width: parent.width * .5
-
-                    Rectangle {
-                        id: target
-                        x: 8
-                        y: 5
-                        color: "#e1e8ed"
-                        height: 40
-                        width: 177
-                        radius: 40
-
-                        Rectangle {
-                            id: targetImage
-                            width: 34
-                            height: 34
-                            radius: 34
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.left: parent.left
-                            anchors.leftMargin: 4
-                        }
-                        Text {
-                            id: targetName
-                            text: qsTr("screenplay")
-                            font.family: lato.name
-                            renderType: Text.NativeRendering
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.left: targetImage.right
-                            anchors.leftMargin: 8
-
-                        }
-                    }
+                    anchors.right: parent.right
+                    anchors.top: parent.top
                 }
             }
 
@@ -106,7 +73,7 @@ Item {
                 TextInput {
                     id: textInput
                     color: "#424246"
-                    text: qsTr("weilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilweilw eilweilwelwe ilweilweil")
+                    text: qsTr("weilweiilweilwei eilweilwelwe ilweilweil")
                     font.letterSpacing: 0
                     font.wordSpacing: 0
                     font.family: lato.name
@@ -116,7 +83,7 @@ Item {
                     font.pixelSize: 14
                     wrapMode: TextInput.WrapAnywhere
                     anchors.margins: 0
-                    maximumLength: 140
+                    maximumLength: 120
 
                 }
 

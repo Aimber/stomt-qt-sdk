@@ -44,6 +44,12 @@ Item {
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin:3
+            Text {
+                text: qsTr("?")
+                anchors.centerIn: parent
+                font.pixelSize: 18
+                color:"gray"
+            }
         }
 
     }
@@ -82,6 +88,12 @@ Item {
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin:3
+            Text {
+                text: qsTr("?")
+                anchors.centerIn: parent
+                font.pixelSize: 18
+                color:"gray"
+            }
         }
 
     }

@@ -14,5 +14,6 @@
         <file>assets/fonts/Lato-Light.ttf</file>
         <file>assets/fonts/Lato-LightItalic.ttf</file>
         <file>assets/fonts/Lato-Regular.ttf</file>
+        <file>qml/Target.qml</file>
     </qresource>
 </RCC>
