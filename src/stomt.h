@@ -29,12 +29,13 @@ signals:
     void profileImageUrlChanged(QUrl profileImageUrl);
     void stomtSuccessfulSend();
 
+
 public slots:
     void getTargetInfo();
     void sendStomt(QString text, bool isPositive);
     void handleNetworkData(QNetworkReply* reply);
     void targetInfoReceived(QNetworkReply* reply);
-
+    QString getTargetID();
     void setProfileImageUrl(QUrl profileImageUrl)
     {
         if (m_profileImageUrl == profileImageUrl)

@@ -36,6 +36,11 @@ void Stomt::targetInfoReceived(QNetworkReply* reply)
     setProfileImageUrl(QUrl(imgUrl));
 }
 
+QString Stomt::getTargetID()
+{
+    return m_targetID;
+}
+
 void Stomt::sendStomt(QString text, bool isPositive)
 {
     connect(m_netManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(handleNetworkData(QNetworkReply*)));

@@ -39,7 +39,7 @@ Rectangle {
 
         Text {
             id: targetName
-            text: qsTr("screenplay")
+            text: stomtPlugin.getTargetID()
             font.pixelSize: 16
             font.family: lato.name
             renderType: Text.NativeRendering
@@ -48,6 +48,13 @@ Rectangle {
             anchors.leftMargin: 8
         }
     }
+    MouseArea{
+        anchors.fill: parent
+        onClicked: {
+            Qt.openUrlExternally("https://www.stomt.com/" + targetName.text)
+        }
+    }
+
     states: [
         State {
             name: "imgLoading"
