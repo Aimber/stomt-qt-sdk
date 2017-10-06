@@ -1,17 +1,17 @@
 #include "stomt.h"
 
-Stomt::Stomt(QObject *parent) : QObject(parent)
+
+
+Stomt::Stomt( QByteArray stomtID, QObject *parent) : QObject(parent)
 {
+    m_stomtID = stomtID;
+
     m_netManager = new QNetworkAccessManager(this);
     m_netRequest.setUrl(QUrl(QString("https://rest.stomt.com/stomts")));
     m_netRequest.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    m_netRequest.setRawHeader(QByteArray("appid"),QByteArray("C1IfJAruqWFdkM8e7BMPK3dx1"));
+    m_netRequest.setRawHeader(QByteArray("appid"),m_stomtID);
 }
 
-void Stomt::setStomtID(QString id)
-{
-    m_stomtID = id;
-}
 
 void Stomt::getTargetImageUrl(QString targetName)
 {

@@ -8,12 +8,14 @@
 #include <QString>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QByteArray>
 
 class Stomt : public QObject
 {
     Q_OBJECT
 public:
-    explicit Stomt(QObject *parent = nullptr);
+    explicit Stomt(QByteArray stomtID, QObject *parent = nullptr);
+
     void setStomtID(QString id);
 
 signals:
@@ -28,7 +30,7 @@ private:
     QNetworkAccessManager* m_netManager;
     QNetworkReply* m_netReply;
     QNetworkRequest m_netRequest;
-    QString m_stomtID;
+    QByteArray m_stomtID;
 
 };
 
