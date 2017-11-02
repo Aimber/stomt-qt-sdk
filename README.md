@@ -16,7 +16,8 @@ STOMT allows you to collect simple and constructive feedback in-game and [also f
 
 1. Clone this repository
 2. Open the stomt-qt-sdk.pro in QtCreator
-3. Press build. This will compile the project and copy all necessary files into your Qt installation 
+3. Add install to the build steps. Projects -> Build -> Add Build Step -> Select Make -> Insert "install" into Make arguments
+4. Press build. This will compile the project and copy all necessary files into your Qt installation 
  * Example Path: C:\msys64\mingw64\share\qt5\qml\com\stomt\qmlSDK\
  
  ## Usage
