@@ -20,9 +20,17 @@ STOMT allows you to collect simple and constructive feedback in-game and [also f
  * Example Path: C:\msys64\mingw64\share\qt5\qml\com\stomt\qmlSDK\
  
  ## Usage
-  <img alt="STOMT QML feedback integration" src="https://i.imgur.com/92o12rN.png" />
+```qml
+import com.stomt.qmlSDK 1.0
 
-
+    StomtWidget {
+        targetID: "screenplay"
+        appKey: "YourAppID"
+        targetDisplayName: "ScreenPlay"
+        targetImageUrl: "qrc:/assets/icons/favicon.ico"
+    }
+    
+```
 ## Use-Cases
 
 _What will the result look like?_
