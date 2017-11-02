@@ -8,16 +8,11 @@ Item {
     property string appKey
     property string targetID
 
-    Connections {
-        target: Stomt
-    }
-
     onAppKeyChanged: {
         Stomt.setAppID(stomtWidget.appKey)
-
     }
     onTargetIDChanged: {
-         Stomt.setTargetID(stomtWidget.targetID)
+        Stomt.setTargetID(stomtWidget.targetID)
     }
 
     FontLoader {
@@ -62,6 +57,15 @@ Item {
                     WishLikeSwitcher {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
+                        onIsPositiveChanged: {
+                            if(textInput.text === "would" || textInput.text === "because"){
+                                if(wishLikeSwitcher.isPositive){
+                                    textInput.text = "because "
+                                } else {
+                                    textInput.text = "would "
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -84,9 +88,10 @@ Item {
                 TextInput {
                     id: textInput
                     color: "#424246"
-                    text: qsTr("")
+                    text: qsTr("would ")
                     font.letterSpacing: 0
                     font.wordSpacing: 0
+                    selectByMouse: true
                     font.family: lato.name
                     autoScroll: false
                     renderType: Text.NativeRendering
@@ -96,29 +101,23 @@ Item {
                     wrapMode: TextInput.WrapAnywhere
                     maximumLength: 120
                     onTextChanged: {
-                        if(textInput.length >= 100){
-                            limiter.opacity = 1
-                            limiter.text = textInput.length + " / 120"
-                        } else{
-                            limiter.opacity = 0
-                        }
+                        limiter.text = textInput.length + " / 120"
                     }
                 }
             }
 
             Item {
-                id:footer
+                id: footer
                 anchors.right: parent.right
                 anchors.left: parent.left
                 height: stomtWrapper.height * 0.2
                 Text {
                     id: limiter
-                    opacity: 0
-                    text: qsTr("")
+                    text: qsTr("0 / 120")
                     anchors.right: parent.right
                     anchors.rightMargin: 10
                     anchors.verticalCenter: parent.verticalCenter
-                    color:"gray"
+                    color: "gray"
                 }
             }
         }
@@ -128,14 +127,11 @@ Item {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -40
             anchors.horizontalCenter: parent.horizontalCenter
-
         }
         Connections {
             target: submitBtn
             onSendStomt: {
-                Stomt.sendStomt(textInput.text,
-                                      wishLikeSwitcher.isPositive)
-
+                Stomt.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
             }
         }
     }
