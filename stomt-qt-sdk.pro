@@ -1,5 +1,5 @@
 TEMPLATE = lib
-TARGET = stomt-qt-sdk
+TARGET = stomt
 QT += qml quick
 CONFIG += plugin c++11
 
