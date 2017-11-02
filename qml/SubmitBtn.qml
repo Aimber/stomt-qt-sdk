@@ -1,6 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.4
-import QtQuick.Controls.Material 2.2
+import com.stomt.qmlSDK 1.0
 
 Rectangle {
     id: submitBtn
@@ -13,6 +13,7 @@ Rectangle {
 
     signal sendStomt
     property bool isLoading: false
+
 
     Image {
         id: imgArrow
@@ -70,7 +71,7 @@ Rectangle {
     }
 
     Connections {
-        target: stomtPlugin
+        target: Stomt
         onStomtSuccessfulSend: {
             submitBtn.state = "success"
             isLoading = false

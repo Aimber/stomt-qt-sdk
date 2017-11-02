@@ -1,8 +1,10 @@
 import QtQuick 2.0
+import com.stomt.qmlSDK 1.0
 
 Rectangle {
     id: targetWrapper
     state: "imgLoading"
+
 
     Rectangle {
         id: target
@@ -22,7 +24,7 @@ Rectangle {
             clip: true
             Image {
                 id: targetImage
-                source: stomtPlugin.profileImageUrl
+                source: Stomt.profileImageUrl
                 clip: true
                 width: 34
                 height: 34
@@ -39,7 +41,7 @@ Rectangle {
 
         Text {
             id: targetName
-            text: stomtPlugin.getTargetID()
+            text: Stomt.targetID
             font.pixelSize: 16
             font.family: lato.name
             renderType: Text.NativeRendering

@@ -1,0 +1,6 @@
+module com.stomt.qmlSDK
+StomtWidget 1.0 StomtWidget.qml
+SubmitBtn 1.0 SubmitBtn.qml
+Target 1.0 Target.qml
+WishLikeSwitcher 1.0 WishLikeSwitcher.qml
+plugin stomt

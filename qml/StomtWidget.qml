@@ -1,9 +1,24 @@
 import QtQuick 2.0
+import com.stomt.qmlSDK 1.0
 
 Item {
-    id: stomt
+    id: stomtWidget
     height: 236
     width: 420
+    property string appKey
+    property string targetID
+
+    Connections {
+        target: Stomt
+    }
+
+    onAppKeyChanged: {
+        Stomt.setAppID(stomtWidget.appKey)
+
+    }
+    onTargetIDChanged: {
+         Stomt.setTargetID(stomtWidget.targetID)
+    }
 
     FontLoader {
         id: lato
@@ -22,8 +37,8 @@ Item {
 
         border.width: 3
         border.color: "#768998"
-        width: stomt.width
-        height: stomt.height - 40
+        width: stomtWidget.width
+        height: stomtWidget.height - 40
         anchors.margins: 10
 
         Column {
@@ -113,12 +128,14 @@ Item {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -40
             anchors.horizontalCenter: parent.horizontalCenter
+
         }
         Connections {
             target: submitBtn
             onSendStomt: {
-                stomtPlugin.sendStomt(textInput.text,
+                Stomt.sendStomt(textInput.text,
                                       wishLikeSwitcher.isPositive)
+
             }
         }
     }

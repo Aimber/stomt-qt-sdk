@@ -1,9 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>main.cpp</file>
-        <file>qml/Stomt.qml</file>
-        <file>qml/WishLikeSwitcher.qml</file>
         <file>assets/fonts/Lato-Black.ttf</file>
         <file>assets/fonts/Lato-BlackItalic.ttf</file>
         <file>assets/fonts/Lato-Bold.ttf</file>
@@ -14,9 +10,7 @@
         <file>assets/fonts/Lato-Light.ttf</file>
         <file>assets/fonts/Lato-LightItalic.ttf</file>
         <file>assets/fonts/Lato-Regular.ttf</file>
-        <file>qml/Target.qml</file>
         <file>assets/icons/icon_arrow-pointing-to-right.svg</file>
-        <file>qml/SubmitBtn.qml</file>
         <file>assets/icons/icon_correct.svg</file>
     </qresource>
 </RCC>
