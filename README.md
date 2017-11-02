@@ -1,28 +1,38 @@
 # STOMT stomt-qt-sdk [![STOMT API](https://img.shields.io/badge/stomt-v2.10.X-brightgreen.png)](https://rest.stomt.com/)
 
-This is an unofficial qt integration.
+This is an unofficial Qt/QML integration.
 
 <p align="center">
-  <img alt="STOMT Unreal Engine feedback integration" src="https://i.imgur.com/j14uP6G.png" />
+  <img alt="STOMT Qt/QML feedback integration" src="https://i.imgur.com/j14uP6G.png" />
 </p>
 
 ## Why?
 
 STOMT allows you to collect simple and constructive feedback in-game and [also from your website](https://stomt.co/web) and collect it at one central place where you manage it and where your community can vote and comment on the feedback of others. (see [use cases](#use-cases) below)
 
+## Installation
+
+1. Clone this repository
+2. Open the stomt-qt-sdk.pro in QtCreator
+3. Press build. This will compile the project and copy all necessary files into your Qt installation 
+ * Example Path: C:\msys64\mingw64\share\qt5\qml\com\stomt\qmlSDK\
+ 
+ ## Usage
+  <img alt="STOMT QML feedback integration" src="https://i.imgur.com/92o12rN.png" />
+
 
 ## Use-Cases
 
-_What will the result look like?_ 
+_What will the result look like?_
 
 Example Games that use our widget:
 
-* [Empires of the Undergrowth](https://www.stomt.com/empires-of-the-undergrowth)      
+* [Empires of the Undergrowth](https://www.stomt.com/empires-of-the-undergrowth)
 * [All Walls Must Fall](https://www.stomt.com/AWMF)
 
 ## Use our Sandbox
 
-If you want to test the integration please feel free to do what you want on [test.stomt.com](https://test.stomt.com/) 
+If you want to test the integration please feel free to do what you want on [test.stomt.com](https://test.stomt.com/)
 
 * Just go through the configuration steps again using the test server:
 
@@ -37,7 +47,7 @@ We would love to see you contributing to this project. Feel free to fork it and 
 
 ## Authors
 
-[Elias Steurer](https://github.com/kelteseth) | [Follow me on STOMT](https://www.stomt.com/kelteseth)    
+[Elias Steurer](https://github.com/kelteseth) | [Follow me on STOMT](https://www.stomt.com/kelteseth)
 
 
 ## More about stomt
