@@ -1,9 +1,11 @@
 # STOMT stomt-qt-sdk [![STOMT API](https://img.shields.io/badge/stomt-v2.10.X-brightgreen.png)](https://rest.stomt.com/)
 
-This is an unofficial Qt/QML integration.
+This is an unofficial Qt/QML integration. [Give us (anonymous) feedback via stomtQtSDK @stomt!](https://www.stomt.com/stomtqtsdk)
 
 <p align="center">
-  <img alt="STOMT Qt/QML feedback integration" src="https://i.imgur.com/j14uP6G.png" />
+  <a href="https://www.stomt.com/stomtqtsdk">
+    <img alt="STOMT Qt/QML feedback integration" src="https://i.imgur.com/j14uP6G.png" />
+  </a>
 </p>
 
 ## Why?
