@@ -58,8 +58,8 @@ Item {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
                         onIsPositiveChanged: {
-                            if (textInput.text === "would"
-                                    || textInput.text === "because") {
+                            if (textInput.text === "would "
+                                    || textInput.text === "because ") {
                                 if (wishLikeSwitcher.isPositive) {
                                     textInput.text = "because "
                                 } else {
