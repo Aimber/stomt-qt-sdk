@@ -1,24 +1,24 @@
 #include "stomt.h"
 
-Stomt::Stomt(QQuickItem *parent):
-    QQuickItem(parent)
+Stomt::Stomt(QQuickItem* parent)
+    : QQuickItem(parent)
 {
     // By default, QQuickItem does not draw anything. If you subclass
     // QQuickItem to create a visual item, you will need to uncomment the
     // following line and re-implement updatePaintNode()
 
-     setFlag(ItemHasContents, true);
+    setFlag(ItemHasContents, true);
 }
 
 Stomt::~Stomt()
 {
 }
 
-void Stomt::init(){
+void Stomt::init()
+{
     m_netManager = new QNetworkAccessManager(this);
     m_netRequest.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     m_netRequest.setRawHeader(QByteArray("appid"), QByteArray(QByteArray::fromStdString(m_appID.toStdString())));
-    getTargetInfo();
 }
 
 void Stomt::getTargetInfo()
@@ -37,16 +37,15 @@ void Stomt::sendStomt(QString text, bool isPositive)
     tmpObj.insert("text", text);
     tmpObj.insert("anonym", true);
     m_netRequest.setUrl(QUrl(QString("https://rest.stomt.com/stomts")));
-    m_netReply = m_netManager->post(m_netRequest, QJsonDocument(tmpObj).toJson());
+    m_netManager->post(m_netRequest, QJsonDocument(tmpObj).toJson());
 }
 
-void Stomt::handleNetworkData(QNetworkReply *reply)
+void Stomt::handleNetworkData(QNetworkReply* reply)
 {
-    if (reply->readAll() == "")
         emit stomtSuccessfulSend();
 }
 
-void Stomt::targetInfoReceived(QNetworkReply *reply)
+void Stomt::targetInfoReceived(QNetworkReply* reply)
 {
     QScopedPointer<QJsonParseError> err(new QJsonParseError());
     QByteArray tmpBA = reply->readAll();
@@ -77,4 +76,3 @@ void Stomt::setProfileImageUrl(QUrl profileImageUrl)
     m_profileImageUrl = profileImageUrl;
     emit profileImageUrlChanged(m_profileImageUrl);
 }
-

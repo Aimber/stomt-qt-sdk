@@ -5,6 +5,8 @@ Rectangle {
     id: targetWrapper
     state: "imgLoading"
 
+    property url targetImageUrl
+    property string targetDisplayName
 
     Rectangle {
         id: target
@@ -13,24 +15,23 @@ Rectangle {
         width: 177
         radius: 40
 
-        Rectangle {
+        Item {
             id: targetImageWrapper
             width: 34
             height: 34
-            radius: 34
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 4
+            anchors.leftMargin: 6
             clip: true
             Image {
                 id: targetImage
-                source: Stomt.profileImageUrl
+                source: targetImageUrl
                 clip: true
-                width: 34
-                height: 34
+                width: 30
+                height: 30
                 asynchronous: true
-                sourceSize.height: 34
-                sourceSize.width: 34
+                sourceSize.height: 30
+                sourceSize.width: 30
                 anchors.centerIn: parent
                 onStatusChanged: {
                     if (targetImage.status === Image.Ready)
@@ -41,7 +42,7 @@ Rectangle {
 
         Text {
             id: targetName
-            text: Stomt.targetID
+            text: targetDisplayName
             font.pixelSize: 16
             font.family: lato.name
             renderType: Text.NativeRendering

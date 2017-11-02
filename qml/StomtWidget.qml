@@ -7,13 +7,13 @@ Item {
     width: 420
     property string appKey
     property string targetID
+    property url targetImageUrl
+    property string targetDisplayName
 
-    onAppKeyChanged: {
-        Stomt.setAppID(stomtWidget.appKey)
-    }
-    onTargetIDChanged: {
-        Stomt.setTargetID(stomtWidget.targetID)
-    }
+    onAppKeyChanged: Stomt.setAppID(stomtWidget.appKey)
+    onTargetIDChanged: Stomt.setTargetID(stomtWidget.targetID)
+    onTargetImageUrlChanged: targetWrapper.targetImageUrl = stomtWidget.targetImageUrl
+    onTargetDisplayNameChanged: targetWrapper.targetDisplayName = stomtWidget.targetDisplayName
 
     FontLoader {
         id: lato
@@ -38,7 +38,7 @@ Item {
 
         Column {
             id: column
-            spacing: 15
+            spacing: 5
             anchors.fill: parent
             anchors.margins: 15
 
@@ -46,7 +46,7 @@ Item {
                 id: rectangle
                 anchors.right: parent.right
                 anchors.left: parent.left
-                height: stomtWrapper.height * 0.25
+                height: 65
 
                 Rectangle {
                     id: rectangle1
@@ -58,8 +58,9 @@ Item {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
                         onIsPositiveChanged: {
-                            if(textInput.text === "would" || textInput.text === "because"){
-                                if(wishLikeSwitcher.isPositive){
+                            if (textInput.text === "would"
+                                    || textInput.text === "because") {
+                                if (wishLikeSwitcher.isPositive) {
                                     textInput.text = "because "
                                 } else {
                                     textInput.text = "would "
@@ -83,7 +84,7 @@ Item {
                 id: item1
                 anchors.right: parent.right
                 anchors.left: parent.left
-                height: stomtWrapper.height * 0.25
+                height: 65
 
                 TextInput {
                     id: textInput
@@ -110,10 +111,10 @@ Item {
                 id: footer
                 anchors.right: parent.right
                 anchors.left: parent.left
-                height: stomtWrapper.height * 0.2
+                height: 30
                 Text {
                     id: limiter
-                    text: qsTr("0 / 120")
+                    text: qsTr("7 / 120")
                     anchors.right: parent.right
                     anchors.rightMargin: 10
                     anchors.verticalCenter: parent.verticalCenter

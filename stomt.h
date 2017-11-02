@@ -14,6 +14,8 @@
 #include <QtNetwork>
 #include <QtQml>
 #include <QQmlEngine>
+#include <QtConcurrent/QtConcurrent>
+
 
 class Stomt : public QQuickItem
 {
@@ -65,8 +67,8 @@ public slots:
 
         m_targetID = targetID;
         m_targetIDSet = true;
-        emit targetIDChanged(m_targetID);
         setup();
+        emit targetIDChanged(m_targetID);
     }
 
     void setAppID(QString appID)
@@ -76,17 +78,16 @@ public slots:
 
         m_appID = appID;
         m_appIDSet = true;
-        emit appIDChanged(m_appID);
         setup();
+        emit appIDChanged(m_appID);
     }
-    void setup(){
+    inline void setup(){
         if(m_appIDSet && m_targetIDSet)
             init();
     }
 
 private:
     QNetworkAccessManager* m_netManager;
-    QNetworkReply* m_netReply;
     QNetworkRequest m_netRequest;
 
     QUrl m_profileImageUrl;

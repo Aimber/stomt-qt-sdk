@@ -12,6 +12,12 @@ Item {
         source: "qrc:/assets/fonts/Lato-Regular.ttf"
     }
 
+    Component.onCompleted: {
+         var randomNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        img.source = "qrc:/assets/placeholders/" + randomNumber + ".png"
+        img1.source = "qrc:/assets/placeholders/" + randomNumber + ".png"
+    }
+
     Rectangle {
         id: likeWrapper
         x: 20
@@ -40,17 +46,17 @@ Item {
             id: rectangle
             width: 34
             height: 34
-            color: "#ffffff"
+            color: "#00ffffff"
             radius: 17
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin: 3
-            Text {
-                text: qsTr("?")
+            Image {
+                id:img
+                height:32
+                width:32
                 anchors.centerIn: parent
-                font.pixelSize: 18
-                color: "gray"
             }
         }
     }
@@ -83,17 +89,17 @@ Item {
             id: rectangle1
             width: 34
             height: 34
-            color: "#ffffff"
+            color: "#00ffffff"
             radius: 17
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin: 3
-            Text {
-                text: qsTr("?")
+            Image {
+                id:img1
+                height:32
+                width:32
                 anchors.centerIn: parent
-                font.pixelSize: 18
-                color: "gray"
             }
         }
     }

@@ -12,5 +12,11 @@
         <file>assets/fonts/Lato-Regular.ttf</file>
         <file>assets/icons/icon_arrow-pointing-to-right.svg</file>
         <file>assets/icons/icon_correct.svg</file>
+        <file>assets/placeholders/1.png</file>
+        <file>assets/placeholders/2.png</file>
+        <file>assets/placeholders/3.png</file>
+        <file>assets/placeholders/4.png</file>
+        <file>assets/placeholders/5.png</file>
+        <file>assets/placeholders/6.png</file>
     </qresource>
 </RCC>
