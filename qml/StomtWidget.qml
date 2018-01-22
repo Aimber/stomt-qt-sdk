@@ -46,14 +46,14 @@ Item {
                 id: rectangle
                 anchors.right: parent.right
                 anchors.left: parent.left
-                height: 65
+                height: 56
 
                 Rectangle {
                     id: rectangle1
                     height: parent.height
                     anchors.top: parent.top
                     anchors.left: parent.left
-                    width: parent.width * .5
+                    width: parent.width * .55
                     WishLikeSwitcher {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
@@ -73,7 +73,7 @@ Item {
                 Target {
                     id: targetWrapper
                     height: parent.height
-                    width: parent.width * .5
+                    width: parent.width * .45
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.topMargin: 5
@@ -90,19 +90,42 @@ Item {
                     id: textInput
                     color: "#424246"
                     text: qsTr("would ")
+                    antialiasing: false
                     font.letterSpacing: 0
                     font.wordSpacing: 0
                     selectByMouse: true
                     font.family: lato.name
                     autoScroll: false
                     renderType: Text.NativeRendering
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    font.pixelSize: 14
+                    anchors{
+                        fill: parent
+                        topMargin:2
+                        margins: 5
+                    }
+                    font.pixelSize: 18
                     wrapMode: TextInput.WrapAnywhere
                     maximumLength: 120
                     onTextChanged: {
-                        limiter.text = textInput.length + " / 120"
+                        limiter.text = textInput.length
+                    }
+                }
+
+                Rectangle {
+                    width:parent.width
+                    height: 1
+                    color: "#EEF1F3"
+                    anchors {
+                        top:parent.top
+                        topMargin: 24
+                    }
+                }
+                Rectangle {
+                    width:parent.width
+                    height: 1
+                    color: "#EEF1F3"
+                    anchors {
+                        top:parent.top
+                        topMargin: 47
                     }
                 }
             }
@@ -114,11 +137,12 @@ Item {
                 height: 30
                 Text {
                     id: limiter
-                    text: qsTr("7 / 120")
+                    text: qsTr("7")
+                    font.pixelSize: 22
                     anchors.right: parent.right
-                    anchors.rightMargin: 10
+                    anchors.rightMargin: 15
                     anchors.verticalCenter: parent.verticalCenter
-                    color: "gray"
+                    color: "#50e3c2"
                 }
             }
         }

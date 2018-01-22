@@ -15,9 +15,11 @@ Rectangle {
         width: 177
         radius: 40
 
-        Item {
+        Rectangle {
             id: targetImageWrapper
             width: 34
+            color: "gray"
+            radius: 34
             height: 34
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
@@ -29,10 +31,11 @@ Rectangle {
                 clip: true
                 width: 30
                 height: 30
+                fillMode: Image.PreserveAspectFit
                 asynchronous: true
                 sourceSize.height: 30
                 sourceSize.width: 30
-                anchors.centerIn: parent
+                anchors.fill: parent
                 onStatusChanged: {
                     if (targetImage.status === Image.Ready)
                         targetWrapper.state = "imgLoaded"

@@ -46,8 +46,9 @@ Item {
             id: rectangle
             width: 34
             height: 34
-            color: "#00ffffff"
-            radius: 17
+            color: "#ffffff"
+            radius: 34
+            clip:true
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
@@ -88,9 +89,10 @@ Item {
         Rectangle {
             id: rectangle1
             width: 34
+            clip:true
             height: 34
-            color: "#00ffffff"
-            radius: 17
+            color: "#ffffff"
+            radius: 34
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
