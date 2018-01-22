@@ -23,6 +23,7 @@ Item {
     Rectangle {
         id: stomtWrapper
         radius: 8
+        antialiasing: true
         clip: false
         anchors {
             top: parent.top
@@ -53,7 +54,7 @@ Item {
                     height: parent.height
                     anchors.top: parent.top
                     anchors.left: parent.left
-                    width: parent.width * .55
+                    width: parent.width * .5
                     WishLikeSwitcher {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
@@ -73,10 +74,10 @@ Item {
                 Target {
                     id: targetWrapper
                     height: parent.height
-                    width: parent.width * .45
+                    width: parent.width * .5
                     anchors.right: parent.right
                     anchors.top: parent.top
-                    anchors.topMargin: 5
+                    anchors.topMargin: 11
                 }
             }
 

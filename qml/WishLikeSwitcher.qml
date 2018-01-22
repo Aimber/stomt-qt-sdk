@@ -3,7 +3,7 @@ import QtQuick 2.0
 Item {
     id: wishLikeSwitcher
     state: "whish"
-    width: 160
+    width: 180
     height: 56
     property bool isPositive: false
 
@@ -22,14 +22,16 @@ Item {
         id: likeWrapper
         x: 20
         y: 0
-        width: 140
+        width: 160
+        antialiasing: true
+        smooth: true
         height: 40
         color: "#50e3c2"
         radius: 200
 
         Text {
             id: text1
-            text: qsTr("Ich mag")
+            text: qsTr("I like")
             color: "white"
             font.family: lato.name
             horizontalAlignment: Text.AlignHCenter
@@ -39,7 +41,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.left: rectangle.right
             anchors.leftMargin: 10
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
 
         Rectangle {
@@ -53,6 +55,8 @@ Item {
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin: 3
+            antialiasing: true
+            smooth: true
             Image {
                 id:img
                 height:32
@@ -66,7 +70,9 @@ Item {
         id: whishWrapper
         x: 0
         y: 16
-        width: 140
+        antialiasing: true
+        smooth: true
+        width: 160
         height: 40
         color: "#9013fe"
         radius: 200
@@ -74,7 +80,7 @@ Item {
         Text {
             id: text2
             color: "#ffffff"
-            text: qsTr("Ich wünschte")
+            text: qsTr("I wish")
             font.family: lato.name
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -83,7 +89,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.left: rectangle1.right
             anchors.leftMargin: 10
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
 
         Rectangle {
@@ -97,6 +103,8 @@ Item {
             anchors.leftMargin: 4
             anchors.top: parent.top
             anchors.topMargin: 3
+            antialiasing: true
+            smooth: true
             Image {
                 id:img1
                 height:32
@@ -108,6 +116,9 @@ Item {
 
     MouseArea {
         anchors.fill: parent
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
+
         onClicked: {
             if (wishLikeSwitcher.state == "like") {
                 wishLikeSwitcher.state = "wish"

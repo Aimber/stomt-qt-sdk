@@ -18,6 +18,8 @@ Rectangle {
         Rectangle {
             id: targetImageWrapper
             width: 34
+            antialiasing: true
+            smooth: true
             color: "transparent"
             radius: 34
             height: 34
