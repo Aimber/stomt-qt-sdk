@@ -18,7 +18,7 @@ Rectangle {
         Rectangle {
             id: targetImageWrapper
             width: 34
-            color: "gray"
+            color: "transparent"
             radius: 34
             height: 34
             anchors.verticalCenter: parent.verticalCenter
