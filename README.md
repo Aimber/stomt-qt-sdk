@@ -4,7 +4,7 @@ This is an unofficial Qt/QML integration. [Give us (anonymous) feedback via stom
 
 <p align="center">
   <a href="https://www.stomt.com/stomtqtsdk">
-    <img alt="STOMT Qt/QML feedback integration" src="https://i.imgur.com/j14uP6G.png" />
+    <img alt="STOMT Qt/QML feedback integration" src="https://i.imgur.com/h1GBFLg.png" />
   </a>
 </p>
 
