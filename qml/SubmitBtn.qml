@@ -48,8 +48,8 @@ Rectangle {
         cursorShape: Qt.PointingHandCursor
         onClicked: {
             submitBtn.state = "submit"
-            isLoading = true
-            sendStomt()
+            if(!isLoading)
+                sendStomt()
         }
         onHoveredChanged: {
             if (!isLoading) {

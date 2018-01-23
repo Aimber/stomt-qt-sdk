@@ -157,6 +157,7 @@ Item {
         Connections {
             target: submitBtn
             onSendStomt: {
+                submitBtn.isLoading = true
                 Stomt.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
             }
         }
