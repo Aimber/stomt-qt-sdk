@@ -9,11 +9,13 @@ Item {
     property string targetID
     property url targetImageUrl
     property string targetDisplayName
+    property bool useTestServer: false
 
     onAppKeyChanged: Stomt.setAppID(stomtWidget.appKey)
     onTargetIDChanged: Stomt.setTargetID(stomtWidget.targetID)
     onTargetImageUrlChanged: targetWrapper.targetImageUrl = stomtWidget.targetImageUrl
     onTargetDisplayNameChanged: targetWrapper.targetDisplayName = stomtWidget.targetDisplayName
+    onUseTestServerChanged: Stomt.setUseTestServer(useTestServer)
 
     FontLoader {
         id: lato

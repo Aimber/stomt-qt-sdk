@@ -24,7 +24,7 @@ void Stomt::init()
 void Stomt::getTargetInfo()
 {
     connect(m_netManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(targetInfoReceived(QNetworkReply*)));
-    m_netRequest.setUrl(QUrl(QString("https://rest.stomt.com/targets/" + m_targetID)));
+    m_netRequest.setUrl(QUrl(QString(m_baseUrlStomt + "/targets" + m_targetID)));
     m_netManager->get(m_netRequest);
 }
 
@@ -36,7 +36,7 @@ void Stomt::sendStomt(QString text, bool isPositive)
     tmpObj.insert("positive", isPositive);
     tmpObj.insert("text", text);
     tmpObj.insert("anonym", true);
-    m_netRequest.setUrl(QUrl(QString("https://rest.stomt.com/stomts")));
+    m_netRequest.setUrl(QUrl(QString( m_baseUrlStomt +"/stomts")));
     m_netManager->post(m_netRequest, QJsonDocument(tmpObj).toJson());
 }
 

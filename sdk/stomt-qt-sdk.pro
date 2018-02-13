@@ -40,3 +40,4 @@ target.path = $$installPath
 pluginfiles.path = $$installPath
 INSTALLS += target qmldir pluginfiles
 
+
