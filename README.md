@@ -43,13 +43,12 @@ If you want to test the integration please feel free to do what you want on [tes
 3. Add this to your StomtWidget {...}
 
 ```qml
-        
         useTestServer: true
 ```
 
 ## Contribution
 
-We would love to see you contributing to this project. Feel free to fork it and send in your pull requests! Visit the [project on STOMT](https://www.stomt.com/stomt-unreal-engine-plugin) to support with your ideas, wishes and feedback.
+We would love to see you contributing to this project. Feel free to fork it and send in your pull requests! Visit the [project on STOMT](https://www.stomt.com/stomtqtsdk) to support with your ideas, wishes and feedback.
 
 
 ## Authors
