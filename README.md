@@ -32,6 +32,13 @@ import com.stomt.qmlSDK 1.0
     }
     
 ```
+Optional for testing: 
+```qml
+        // If you want to test your
+        // integration use: https://test.stomt.com/
+        // Add this to your StomtWidget {...}
+        useTestServer: true
+```
 ## Use-Cases
 
 _What will the result look like?_
