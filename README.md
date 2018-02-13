@@ -32,22 +32,6 @@ import com.stomt.qmlSDK 1.0
     }
     
 ```
-Optional for testing: 
-```qml
-        // If you want to test your
-        // integration use: https://test.stomt.com/
-        // Add this to your StomtWidget {...}
-        useTestServer: true
-```
-## Use-Cases
-
-_What will the result look like?_
-
-Example Games that use our widget:
-
-* [Empires of the Undergrowth](https://www.stomt.com/empires-of-the-undergrowth)
-* [All Walls Must Fall](https://www.stomt.com/AWMF)
-
 ## Use our Sandbox
 
 If you want to test the integration please feel free to do what you want on [test.stomt.com](https://test.stomt.com/)
@@ -56,7 +40,12 @@ If you want to test the integration please feel free to do what you want on [tes
 
 1. Register on [test.stomt.com](https://test.stomt.com/signup/game).
 2. And create an [App Id](https://test.stomt.com/integrate) for your project.
-3. Enter "https://test.rest.stomt.com" as `Rest URL` in the widget.
+3. Add this to your StomtWidget {...}
+
+```qml
+        
+        useTestServer: true
+```
 
 ## Contribution
 
