@@ -1,7 +1,5 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/dv4pqwy8b87k1l0p?svg=true)](https://ci.appveyor.com/project/kelteseth/stomt-qt-sdk)
+# STOMT stomt-qt-sdk [![STOMT API](https://img.shields.io/badge/stomt-v2.10.X-brightgreen.png)](https://rest.stomt.com/)[![Build status](https://ci.appveyor.com/api/projects/status/dv4pqwy8b87k1l0p?svg=true)](https://ci.appveyor.com/project/kelteseth/stomt-qt-sdk)
 
-
-# STOMT stomt-qt-sdk [![STOMT API](https://img.shields.io/badge/stomt-v2.10.X-brightgreen.png)](https://rest.stomt.com/)
 
 This is an unofficial Qt/QML integration. [Give us (anonymous) feedback via stomtQtSDK @stomt!](https://www.stomt.com/stomtqtsdk)
 
