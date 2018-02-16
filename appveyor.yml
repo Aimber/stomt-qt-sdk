@@ -1,0 +1,7 @@
+install:
+  - set QTDIR=C:\Qt\5.10.0\msvc2017_64
+  - set PATH=%PATH%;%QTDIR%\bin;C:\Qt\5.10.0
+build_script:
+  - qmake ScreenPlay.pro
+  - mingw32-make
+  - mingw32-make install
