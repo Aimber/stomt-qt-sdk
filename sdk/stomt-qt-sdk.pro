@@ -19,6 +19,7 @@ HEADERS += \
     stomt.h
 
 pluginfiles.files +=  qmldir \
+    qml/SendSuccessful.qml \
     qml/StomtWidget.qml \
     qml/SubmitBtn.qml \
     qml/Target.qml \
@@ -39,5 +40,3 @@ qmldir.path = $$installPath
 target.path = $$installPath
 pluginfiles.path = $$installPath
 INSTALLS += target qmldir pluginfiles
-
-

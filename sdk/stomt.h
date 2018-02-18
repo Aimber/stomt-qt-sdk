@@ -24,15 +24,10 @@ public:
     Stomt(QQuickItem* parent = nullptr);
     ~Stomt();
 
-    Q_PROPERTY(QUrl profileImageUrl READ profileImageUrl WRITE setProfileImageUrl NOTIFY profileImageUrlChanged)
     Q_PROPERTY(QString appID READ appID WRITE setAppID NOTIFY appIDChanged)
     Q_PROPERTY(QString targetID READ targetID WRITE setTargetID NOTIFY targetIDChanged)
     Q_PROPERTY(bool useTestServer READ useTestServer WRITE setUseTestServer NOTIFY useTestServerChanged)
 
-    QUrl profileImageUrl() const
-    {
-        return m_profileImageUrl;
-    }
 
     QString targetID() const
     {
@@ -51,8 +46,7 @@ public:
 
 
 signals:
-    void profileImageUrlChanged(QUrl profileImageUrl);
-    void stomtSuccessfulSend();
+    void stomtSuccessfulSend(QString shortlink);
     void targetIDChanged(QString targetID);
     void appIDChanged(QString appID);
     void useTestServerChanged(bool useTestServer);
@@ -60,12 +54,10 @@ signals:
 
 public slots:
     void init();
-    void getTargetInfo();
     void sendStomt(QString text, bool isPositive);
-    void handleNetworkData(QNetworkReply* reply);
-    void targetInfoReceived(QNetworkReply* reply);
+    void sendStomtResponse(QNetworkReply* reply);
     QString getTargetID();
-    void setProfileImageUrl(QUrl profileImageUrl);
+
 
     void setTargetID(QString targetID)
     {

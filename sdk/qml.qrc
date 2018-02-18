@@ -19,5 +19,7 @@
         <file>assets/placeholders/5.png</file>
         <file>assets/placeholders/6.png</file>
         <file>assets/icons/icon_refresh.svg</file>
+        <file>assets/particle/backgroundGlow.png</file>
+        <file>assets/particle/dot.png</file>
     </qresource>
 </RCC>

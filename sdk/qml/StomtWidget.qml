@@ -31,13 +31,13 @@ Item {
             top: parent.top
             right: parent.right
             left: parent.left
+            margins: 10
         }
 
         border.width: 3
         border.color: "#768998"
         width: stomtWidget.width
         height: stomtWidget.height - 40
-        anchors.margins: 10
 
         Column {
             id: column
@@ -151,12 +151,7 @@ Item {
             }
         }
 
-        SubmitBtn {
-            id: submitBtn
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: -40
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
+
         Connections {
             target: submitBtn
             onSendStomt: {
@@ -164,5 +159,25 @@ Item {
                 Stomt.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
             }
         }
+    }
+
+    SendSuccessful {
+        id:sendSuccessful
+        width: stomtWidget.width
+        height: stomtWidget.height - 40
+        anchors {
+            top: parent.top
+            right: parent.right
+            left: parent.left
+            margins: 10
+        }
+
+    }
+
+    SubmitBtn {
+        id: submitBtn
+        anchors.top: stomtWrapper.bottom
+        anchors.topMargin: -40
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }
