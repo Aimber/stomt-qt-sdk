@@ -13,7 +13,7 @@ Item {
     }
 
     Component.onCompleted: {
-         var randomNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        var randomNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1
         img.source = "qrc:/assets/placeholders/" + randomNumber + ".png"
         img1.source = "qrc:/assets/placeholders/" + randomNumber + ".png"
     }
@@ -41,7 +41,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.left: rectangle.right
             anchors.leftMargin: 10
-            font.pixelSize: 14
+            font.pixelSize: 18
         }
 
         Rectangle {
@@ -50,7 +50,7 @@ Item {
             height: 34
             color: "#ffffff"
             radius: 34
-            clip:true
+            clip: true
             anchors.left: parent.left
             anchors.leftMargin: 4
             anchors.top: parent.top
@@ -58,10 +58,22 @@ Item {
             antialiasing: true
             smooth: true
             Image {
-                id:img
-                height:32
-                width:32
+                id: img
+                height: 32
+                width: 32
                 anchors.centerIn: parent
+            }
+        }
+        Image {
+            id: imgSwitchLike
+            source: "qrc:/assets/icons/icon_refresh.svg"
+            height: 16
+            width: 16
+            opacity: 0
+            anchors {
+                right: parent.right
+                rightMargin: 16
+                verticalCenter: parent.verticalCenter
             }
         }
     }
@@ -89,13 +101,13 @@ Item {
             anchors.bottom: parent.bottom
             anchors.left: rectangle1.right
             anchors.leftMargin: 10
-            font.pixelSize: 14
+            font.pixelSize: 18
         }
 
         Rectangle {
             id: rectangle1
             width: 34
-            clip:true
+            clip: true
             height: 34
             color: "#ffffff"
             radius: 34
@@ -106,10 +118,21 @@ Item {
             antialiasing: true
             smooth: true
             Image {
-                id:img1
-                height:32
-                width:32
+                id: img1
+                height: 32
+                width: 32
                 anchors.centerIn: parent
+            }
+        }
+        Image {
+            id: imgSwitchWish
+            source: "qrc:/assets/icons/icon_refresh.svg"
+            height: 16
+            width: 16
+            anchors {
+                right: parent.right
+                rightMargin: 16
+                verticalCenter: parent.verticalCenter
             }
         }
     }
@@ -132,7 +155,16 @@ Item {
 
     states: [
         State {
-            name: "which"
+            name: "wish"
+
+            PropertyChanges {
+                target: imgSwitchLike
+                opacity: 0
+            }
+            PropertyChanges {
+                target: imgSwitchWish
+                opacity: 1
+            }
         },
         State {
             name: "like"
@@ -149,15 +181,26 @@ Item {
                 x: 20
                 y: 0
             }
+
+            PropertyChanges {
+                target: imgSwitchLike
+                opacity: 1
+            }
+            PropertyChanges {
+                target: imgSwitchWish
+                opacity: 0
+            }
         }
     ]
     transitions: [
         Transition {
             NumberAnimation {
-                properties: "x,y"
+                properties: "x,y,opacity"
                 easing.type: Easing.InOutQuad
-                duration: 300
+                duration: 150
             }
+
+
         }
     ]
 }
