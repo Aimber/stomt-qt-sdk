@@ -7,6 +7,7 @@ Rectangle {
 
     property url targetImageUrl
     property string targetDisplayName
+    property bool useTestServer
 
     Rectangle {
         id: target
@@ -60,7 +61,12 @@ Rectangle {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
         onClicked: {
-            Qt.openUrlExternally("https://www.stomt.com/" + targetName.text)
+            if(useTestServer){
+                Qt.openUrlExternally("https://test.stomt.com/" + targetName.text)
+            } else {
+                Qt.openUrlExternally("https://www.stomt.com/" + targetName.text)
+            }
+
         }
     }
 

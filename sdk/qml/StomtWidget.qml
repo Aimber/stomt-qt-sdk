@@ -75,6 +75,7 @@ Item {
 
                 Target {
                     id: targetWrapper
+                    useTestServer: stomtWidget.useTestServer
                     height: parent.height
                     width: parent.width * .5
                     anchors.right: parent.right
