@@ -80,7 +80,7 @@ Item {
                     width: parent.width * .5
                     anchors.right: parent.right
                     anchors.top: parent.top
-                    anchors.topMargin: 11
+                    anchors.topMargin: 9
                 }
             }
 
