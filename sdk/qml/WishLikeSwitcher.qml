@@ -2,10 +2,11 @@ import QtQuick 2.0
 
 Item {
     id: wishLikeSwitcher
-    state: "whish"
+    state: "wish"
     width: 180
     height: 56
     property bool isPositive: false
+
 
     FontLoader {
         id: lato
@@ -79,7 +80,7 @@ Item {
     }
 
     Rectangle {
-        id: whishWrapper
+        id: wishWrapper
         x: 0
         y: 16
         antialiasing: true
@@ -142,11 +143,27 @@ Item {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
+        onEntered: {
+            if (wishLikeSwitcher.state === "wish") {
+                wishLikeSwitcher.state = "wishHover"
+            } else if (wishLikeSwitcher.state === "like") {
+                wishLikeSwitcher.state = "likeHover"
+            }
+        }
+
+        onExited: {
+            if (wishLikeSwitcher.state === "wishHover") {
+                wishLikeSwitcher.state = "wish"
+            } else if (wishLikeSwitcher.state === "likeHover") {
+                wishLikeSwitcher.state = "like"
+            }
+        }
+
         onClicked: {
-            if (wishLikeSwitcher.state == "like") {
+            if (wishLikeSwitcher.state === "like" || wishLikeSwitcher.state === "likeHover") {
                 wishLikeSwitcher.state = "wish"
                 isPositive = false
-            } else {
+            } else if (wishLikeSwitcher.state === "wish" || wishLikeSwitcher.state === "wishHover") {
                 wishLikeSwitcher.state = "like"
                 isPositive = true
             }
@@ -167,6 +184,52 @@ Item {
             }
         },
         State {
+            name: "likeHover"
+            PropertyChanges {
+                target: likeWrapper
+                x: 0
+                y: 30
+                z: 1
+            }
+            PropertyChanges {
+                target: wishWrapper
+                x: 20
+                y: -5
+            }
+            PropertyChanges {
+                target: imgSwitchLike
+                opacity: 1
+            }
+            PropertyChanges {
+                target: imgSwitchWish
+                opacity: 0
+            }
+        },
+        State {
+            name: "wishHover"
+            PropertyChanges {
+                target: likeWrapper
+                x: 20
+                y: -10
+                z: 0
+            }
+            PropertyChanges {
+                target: wishWrapper
+                x: 0
+                y: 25
+                z: 1
+            }
+            PropertyChanges {
+                target: imgSwitchLike
+                opacity: 0
+            }
+            PropertyChanges {
+                target: imgSwitchWish
+                opacity: 1
+            }
+
+        },
+        State {
             name: "like"
 
             PropertyChanges {
@@ -177,7 +240,7 @@ Item {
             }
 
             PropertyChanges {
-                target: whishWrapper
+                target: wishWrapper
                 x: 20
                 y: 0
             }
@@ -199,8 +262,6 @@ Item {
                 easing.type: Easing.InOutQuad
                 duration: 150
             }
-
-
         }
     ]
 }
