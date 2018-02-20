@@ -5,7 +5,7 @@ import com.stomt.qmlSDK 1.0
 Window {
     visible: true
     width: 640
-    height: 480
+    height: 360
     title: qsTr("Stomt Example Widget")
 
     StomtWidget {
