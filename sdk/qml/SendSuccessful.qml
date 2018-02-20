@@ -166,6 +166,7 @@ Rectangle {
         width: 300
         height: 500
         propagateComposedEvents: true
+        cursorShape: Qt.PointingHandCursor
         onClicked: {
             Qt.openUrlExternally(stomtShortLink)
             sendSuccessful.state = "invisible"
@@ -184,6 +185,7 @@ Rectangle {
     MouseArea {
         width: 32
         height: width
+        cursorShape: Qt.PointingHandCursor
         anchors {
             top: parent.top
             topMargin: 10
