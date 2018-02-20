@@ -21,5 +21,6 @@
         <file>assets/icons/icon_refresh.svg</file>
         <file>assets/particle/backgroundGlow.png</file>
         <file>assets/particle/dot.png</file>
+        <file>assets/icons/icon_close.svg</file>
     </qresource>
 </RCC>

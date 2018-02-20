@@ -21,11 +21,20 @@ Rectangle {
 
     opacity: 0
 
+    Timer {
+        id:timerBack
+        interval: 15000
+        running: false
+        repeat: false
+        onTriggered: sendSuccessful.state = "invisible"
+    }
+
     Connections {
         target: Stomt
         onStomtSuccessfulSend: {
             stomtShortLink = shortlink
             sendSuccessful.state = "visible"
+            timerBack.start()
         }
     }
 
@@ -169,6 +178,23 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             color: "white"
             text: qsTr("View your feedback \n on stomt.com")
+        }
+    }
+
+    MouseArea {
+        width: 32
+        height: width
+        anchors {
+            top: parent.top
+            topMargin: 10
+            rightMargin: 5
+            right: parent.right
+        }
+        onClicked: sendSuccessful.state = "invisible"
+        Image {
+            id: imgClose
+            source: "qrc:/assets/icons/icon_close.svg"
+            sourceSize: Qt.size(24, 24)
         }
     }
 

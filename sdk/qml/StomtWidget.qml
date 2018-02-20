@@ -22,6 +22,19 @@ Item {
         source: "qrc:/assets/fonts/Lato-Regular.ttf"
     }
 
+    Connections {
+        target: Stomt
+        onStomtSuccessfulSend: resetStomt()
+    }
+
+    function resetStomt() {
+            if (wishLikeSwitcher.isPositive) {
+                textInput.text = "because "
+            } else {
+                textInput.text = "would "
+            }
+    }
+
     Rectangle {
         id: stomtWrapper
         radius: 8
@@ -60,16 +73,7 @@ Item {
                     WishLikeSwitcher {
                         id: wishLikeSwitcher
                         anchors.left: parent.left
-                        onIsPositiveChanged: {
-                            if (textInput.text === "would "
-                                    || textInput.text === "because ") {
-                                if (wishLikeSwitcher.isPositive) {
-                                    textInput.text = "because "
-                                } else {
-                                    textInput.text = "would "
-                                }
-                            }
-                        }
+                        onIsPositiveChanged: resetStomt()
                     }
                 }
 
@@ -101,9 +105,9 @@ Item {
                     font.family: lato.name
                     autoScroll: false
                     renderType: Text.NativeRendering
-                    anchors{
+                    anchors {
                         fill: parent
-                        topMargin:2
+                        topMargin: 2
                         margins: 5
                     }
                     font.pixelSize: 18
@@ -115,20 +119,20 @@ Item {
                 }
 
                 Rectangle {
-                    width:parent.width
+                    width: parent.width
                     height: 1
                     color: "#EEF1F3"
                     anchors {
-                        top:parent.top
+                        top: parent.top
                         topMargin: 24
                     }
                 }
                 Rectangle {
-                    width:parent.width
+                    width: parent.width
                     height: 1
                     color: "#EEF1F3"
                     anchors {
-                        top:parent.top
+                        top: parent.top
                         topMargin: 47
                     }
                 }
@@ -139,6 +143,17 @@ Item {
                 anchors.right: parent.right
                 anchors.left: parent.left
                 height: 30
+                Text {
+                    id: txtTestWarning
+                    text: qsTr("TESTSERVER ENABLED")
+                    color: "#f44336"
+                    enabled: useTestServer
+                    anchors.right: parent.lft
+                    font.pixelSize: 12
+                    font.bold: true
+                    anchors.rightMargin: 15
+                    anchors.verticalCenter: parent.verticalCenter
+                }
                 Text {
                     id: limiter
                     text: qsTr("7")
@@ -151,18 +166,21 @@ Item {
             }
         }
 
-
         Connections {
             target: submitBtn
             onSendStomt: {
-                submitBtn.isLoading = true
-                Stomt.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
+                if (textInput.text === "would " || textInput.text === "because "){
+
+                } else {
+                    submitBtn.isLoading = true
+                    Stomt.sendStomt(textInput.text, wishLikeSwitcher.isPositive)
+                }
             }
         }
     }
 
     SendSuccessful {
-        id:sendSuccessful
+        id: sendSuccessful
         width: stomtWidget.width
         height: stomtWidget.height - 40
         anchors {
@@ -171,7 +189,6 @@ Item {
             left: parent.left
             margins: 10
         }
-
     }
 
     SubmitBtn {
