@@ -13,6 +13,10 @@ This is an unofficial Qt/QML integration. [Give us (anonymous) feedback via stom
 
 STOMT allows you to collect simple and constructive feedback in-game and [also from your website](https://stomt.co/web) and collect it at one central place where you manage it and where your community can vote and comment on the feedback of others. (see [use cases](#use-cases) below)
 
+## Requirements
+* Minimum Qt version: Qt 5.7
+* Tested Qt version: Qt 5.10.1
+
 ## Installation
 
 1. Clone this repository
