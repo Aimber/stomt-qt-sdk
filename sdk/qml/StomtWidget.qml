@@ -148,6 +148,7 @@ Item {
                     text: qsTr("TESTSERVER ENABLED")
                     color: "#f44336"
                     enabled: useTestServer
+                    visible: useTestServer
                     anchors.right: parent.lft
                     font.pixelSize: 12
                     font.bold: true
