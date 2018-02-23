@@ -16,8 +16,12 @@ STOMT allows you to collect simple and constructive feedback in-game and [also f
 ## Requirements
 * Minimum Qt version: Qt 5.7
 * Tested Qt version: Qt 5.10.1
-* Latest OpenSSL which is not available in the official Qt installer
+* Latest OpenSSL which is not available in the official Qt installer. Therefore I recommend using Qt via [msys2](http://www.msys2.org/) where you have all the packages you need to develop with theses three commands:
 
+ - Start msys2
+    - Run: ``` pacman -Syu ``` then restart terminal
+    - Run: ``` pacman -Su ```
+    - Run: ``` pacman -S  mingw64/mingw-w64-x86_64-gdb mingw64/mingw-w64-x86_64-qt5 mingw64/mingw-w64-x86_64-qt-creator  mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-openssl ```
 ## Installation
 
 1. Clone this repository
