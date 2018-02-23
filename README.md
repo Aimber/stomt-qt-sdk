@@ -16,6 +16,7 @@ STOMT allows you to collect simple and constructive feedback in-game and [also f
 ## Requirements
 * Minimum Qt version: Qt 5.7
 * Tested Qt version: Qt 5.10.1
+* Latest OpenSSL which is not available in the official Qt installer
 
 ## Installation
 
